@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -30,6 +32,8 @@ module CandidSidewalk
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
     config.active_record.raise_in_transactional_callbacks = true
+    config.filepicker_rails.api_key = 'AOWIZJ185Q0CzpE2ln5oAz'
   end
 end
