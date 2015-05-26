@@ -1,9 +1,6 @@
 <%= form_for @photo do |f| %>
   <div>
-    <%= f.label :filepicker_url, "Upload Your Photo:" %>
-    <%= f.filepicker_field :filepicker_url %> 
+    <input type="file" capture="camera" accept="image/*" id="takePictureField">
   </div>
-
   <%= f.submit %>
 <% end %>
-  <input type="file" capture="camera" accept="image/*" id="takePictureField">
