@@ -9,9 +9,10 @@ class IncidentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @incident = Incident.create(incident_params)
+    binding.pry
     IncidentMailer.welcome_email.deliver!
+    binding.pry
     # redirect_to @photo
  end 
   
@@ -21,7 +22,7 @@ class IncidentsController < ApplicationController
 
   private
   def incident_params
-    # params.require(:photo).permit(:filepicker_url)
+    params.require(:incident).permit(:name, :description, :image)
   end 
 
 end
