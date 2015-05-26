@@ -5,15 +5,13 @@ class IncidentsController < ApplicationController
   # end 
 
   def show
-    
+    render nothing: :true
   end
 
   def create
     @incident = Incident.create(incident_params)
-    binding.pry
-    IncidentMailer.welcome_email.deliver!
-    binding.pry
-    # redirect_to @photo
+    IncidentMailer.welcome_email(@incident).deliver!
+    redirect_to @incident
  end 
   
   def new
