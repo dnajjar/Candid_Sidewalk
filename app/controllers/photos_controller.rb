@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create(photo_params)
-    PhotoMailer.welcome_email.deliver
+    PhotoMailer.welcome_email.deliver!
     # redirect_to @photo
  end 
   
