@@ -35,6 +35,5 @@ module CandidSidewalk
     
 
     config.active_record.raise_in_transactional_callbacks = true
-    config.filepicker_rails.api_key = 'api_key'
   end
 end
