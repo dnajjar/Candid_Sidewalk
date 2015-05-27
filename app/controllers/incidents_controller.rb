@@ -9,9 +9,10 @@ class IncidentsController < ApplicationController
   end
 
   def create
-      binding.pry
     @incident = Incident.create(incident_params)
-
+    # @incident.latitude = @incident.location.split(",")[0]
+    # @incident.longitude = @incident.location.split(",")[1]
+       binding.pry
     IncidentMailer.welcome_email(@incident).deliver_now!
     redirect_to @incident
  end 
