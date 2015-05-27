@@ -10,7 +10,10 @@ class IncidentsController < ApplicationController
 
   def create
     @incident = Incident.create(incident_params)
-    IncidentMailer.welcome_email(@incident).deliver!
+    # @incident.latitude = @incident.location.split(",")[0]
+    # @incident.longitude = @incident.location.split(",")[1]
+       binding.pry
+    IncidentMailer.welcome_email(@incident).deliver_now!
     redirect_to @incident
  end 
   
@@ -20,7 +23,7 @@ class IncidentsController < ApplicationController
 
   private
   def incident_params
-    params.require(:incident).permit(:name, :description, :image)
+    params.require(:incident).permit(:name, :description, :image, :location)
   end 
 
 end
