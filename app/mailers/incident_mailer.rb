@@ -4,6 +4,6 @@ class IncidentMailer < ApplicationMailer
     @name = incident.name
     @description = incident.description
     attachments.inline['image.jpg'] = File.read(@image.file.file)
-    mail(to: "jtaub9503@gmail.com" , subject: 'Welcome to My Awesome Site')
+    mail(to: "billydb@example.com" , subject: 'For your consideration')
   end
 end

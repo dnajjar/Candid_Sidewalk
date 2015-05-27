@@ -9,8 +9,10 @@ class IncidentsController < ApplicationController
   end
 
   def create
+      binding.pry
     @incident = Incident.create(incident_params)
-    IncidentMailer.welcome_email(@incident).deliver!
+
+    IncidentMailer.welcome_email(@incident).deliver_now!
     redirect_to @incident
  end 
   
@@ -20,7 +22,7 @@ class IncidentsController < ApplicationController
 
   private
   def incident_params
-    params.require(:incident).permit(:name, :description, :image)
+    params.require(:incident).permit(:name, :description, :image, :location)
   end 
 
 end
