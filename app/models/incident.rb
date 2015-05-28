@@ -9,7 +9,6 @@ class Incident < ActiveRecord::Base
   def get_city_data
     client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
     results = client.representatives.at(location)
-    
     @district = results['offices']['oa']['name']
     @official_hash = results["officials"]["pb"]
     @name = @official_hash["name"]
