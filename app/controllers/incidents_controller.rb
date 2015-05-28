@@ -4,7 +4,6 @@ class IncidentsController < ApplicationController
 def create
     @incident = Incident.create(incident_params)
     @incident.get_city_data
-    binding.pry
     IncidentMailer.welcome_email(@incident).deliver_now!
     # redirect_to incident_path
     redirect_to @incident

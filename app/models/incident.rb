@@ -16,8 +16,15 @@ class Incident < ActiveRecord::Base
     @number = @official_hash["phones"][0]
     @twitter = "@#{@official_hash["channels"][0]["id"]}"
     @photo_url = @official_hash["photo_url"]
-
   end
+
+  def get_name
+    client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
+    results = client.representatives.at(location)
+    @district = results['offices']['oa']['name']
+    @official_hash = results["officials"]["pb"]
+    @name = @official_hash["name"]
+  end 
   def location
     @location = self.reverse_geocode
   end 
