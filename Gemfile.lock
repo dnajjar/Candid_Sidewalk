@@ -70,6 +70,9 @@ GEM
       timers (~> 4.0.0)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
+    civic_aide (0.1.1)
+      hashie
+      httparty
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -233,7 +236,11 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashie (3.4.1)
     hitimes (1.2.2)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -268,6 +275,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.6.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.2.0)
     net-scp (1.2.1)
@@ -412,6 +420,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  civic_aide
   coffee-rails (~> 4.1.0)
   database_cleaner
   dotenv-rails

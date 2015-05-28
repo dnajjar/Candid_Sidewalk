@@ -1,5 +1,4 @@
 <h1>Incident</h1>
 
 <%= @incident.reverse_geocode %>
-<%= image_tag(@incident.image)%>
-<!-- need image tag -->
+<%= image_tag(@incident.image.small_size)%>

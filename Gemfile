@@ -8,6 +8,8 @@ gem 'rails', '4.2.0'
 gem 'carrierwave'
 gem "mini_magick"
 # Use SCSS for stylesheets
+gem 'civic_aide'
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

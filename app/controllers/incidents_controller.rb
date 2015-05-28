@@ -1,22 +1,20 @@
 class IncidentsController < ApplicationController
   
-  # def index
 
-  # end 
-
-  def show
-    @incident = Incident.find(params[:id])
-    # binding.pry
-  end
-
-  def create
+def create
     @incident = Incident.create(incident_params)
-    # @incident.latitude = @incident.location.split(",")[0]
-    # @incident.longitude = @incident.location.split(",")[1]
+    @incident.get_city_data
     IncidentMailer.welcome_email(@incident).deliver_now!
+    # redirect_to incident_path
     redirect_to @incident
+    # redirect_to action: :show
  end 
   
+  def show
+    # binding.pry
+    @incident = Incident.find(params[:id])
+  end
+
   def new
     @incident = Incident.new
   end 
