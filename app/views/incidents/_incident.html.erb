@@ -1,4 +1,10 @@
 <h1>Incident</h1>
-
-<%= @incident.reverse_geocode %>
-<%= image_tag(@incident.image.thumb)%>
+<div>
+<p>Your location: <%= @incident.reverse_geocode %>
+</p>
+</div>
+<div>
+<p>Your image:
+</p>
+ <%= image_tag(@incident.image.thumb)%>
+</div>
