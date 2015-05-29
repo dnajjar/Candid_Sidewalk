@@ -4,7 +4,10 @@ class IncidentsController < ApplicationController
 def create
     @incident = Incident.create(incident_params)
     @incident.get_city_data
+<<<<<<< HEAD
     # binding.pry
+=======
+>>>>>>> 7d8a2609ffadb088902f79dd533059931a3cc55c
     IncidentMailer.welcome_email(@incident).deliver_now!
     # redirect_to incident_path
     redirect_to @incident
