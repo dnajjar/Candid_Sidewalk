@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
   
-  def index
-    @users = User.all
-  end 
-  
   def new
     @user = User.new
   end
@@ -18,6 +14,8 @@ class UsersController < ApplicationController
       session[:user_id]  = @user.id
       redirect_to @user, notice: "Your account has been created!"
     else
+      @user = User.new
+      @user.errors[:base] = "Bad username or password"
       render :new
     end
   end 

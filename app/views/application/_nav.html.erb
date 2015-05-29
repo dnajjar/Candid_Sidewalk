@@ -15,25 +15,30 @@
       <div class="collapse navbar-collapse" id="custom-collapse">
   
         <ul class="nav navbar-nav navbar-right">
-              <li >
-                <%= link_to "Report a Sidewalk", new_incident_path %>
-              </li>
+          <li >
+            <%= link_to "Report a Sidewalk", new_incident_path %>
+          </li>
 
-              <li >
-                <%= link_to "Home", root_path %>
-              </li>
-              
-               <li >
-                <%= link_to "About", root_path %>
-              </li>
-
-              <li >
-                <%= link_to "Sign Up", sign_up_path %>
-              </li>
-              
-              <li >
-                <%= link_to "Log In", sign_in_path %>
-              </li>
+          <li >
+            <%= link_to "Home", root_path %>
+          </li>
+          
+           <li >
+            <%= link_to "About", root_path %>
+          </li>
+        <% unless logged_in? %>  
+          <li >
+            <%= link_to "Sign Up", sign_up_path %>
+          </li>
+          
+          <li >
+            <%= link_to "Log In", sign_in_path %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Log Out", sign_out_path, method: :delete  %>
+          </li>
+        <% end %>
         </ul>
       </div>
   
