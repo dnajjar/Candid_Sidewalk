@@ -13,12 +13,8 @@ class Incident < ActiveRecord::Base
     @district = results['offices']['oa']['name']
     @official_hash = results["officials"]["pb"]
     @name = @official_hash["name"]
-<<<<<<< HEAD
     binding.pry
     @email = @official_hash["emails"][0]
-=======
-    # @email = @official_hash["emails"][0]
->>>>>>> 7d8a2609ffadb088902f79dd533059931a3cc55c
     @number = @official_hash["phones"][0]
     @twitter = "@#{@official_hash["channels"][0]["id"]}"
     @photo_url = @official_hash["photo_url"]
