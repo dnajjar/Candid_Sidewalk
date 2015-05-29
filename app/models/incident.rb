@@ -26,6 +26,7 @@ class Incident < ActiveRecord::Base
     @official_hash = results["officials"]["pb"]
     @name = @official_hash["name"]
   end 
+  
   def location
     @location = self.reverse_geocode
   end 
