@@ -50,9 +50,9 @@ include CarrierWave::MiniMagick
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_white_list
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_white_list
+    %w(jpg jpeg gif png doc docx xls xlsx pdf zip)   
+  end
 
   
 
