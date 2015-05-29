@@ -8,26 +8,45 @@ class Incident < ActiveRecord::Base
 
   def get_city_data
     client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
-    results = client.representatives.at(location)
-
-    @district = results['offices']['oa']['name']
-    @official_hash = results["officials"]["pb"]
-    @name = @official_hash["name"]
-    binding.pry
-    @email = @official_hash["emails"][0]
-    @number = @official_hash["phones"][0]
-    @twitter = "@#{@official_hash["channels"][0]["id"]}"
-    @photo_url = @official_hash["photo_url"]
+    @results = client.representatives.at(location)
   end
 
-  def get_name
-    client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
-    results = client.representatives.at(location)
-    @district = results['offices']['oa']['name']
-    @official_hash = results["officials"]["pb"]
-    @name = @official_hash["name"]
+  def get_council 
+    get_city_data
+    @council = @results["officials"].select do |key, value_hash|
+      value_hash["urls"][0].match(/council\.nyc\.gov/) if value_hash["urls"]  
+    end 
+    @rep_name = @council[@council.keys.first]["name"]
+    @number = @council[@council.keys.first]["phones"][0]
+    @twitter = "@#{@council[@council.keys.first]["channels"][0]["id"]}"
+    @photo_url = @council[@council.keys.first]["photo_url"]
+    @email =  @council[@council.keys.first]["emails"][0]
+  end
+
+  def get_photo
+    get_council
+    @photo_url
   end 
   
+   def get_name
+    get_council
+    @rep_name
+  end 
+  
+  def get_email
+    get_council
+    @email
+  end
+
+  def get_number
+    get_council
+    @number
+  end
+  def get_twitter
+    get_council
+    @twitter = "@#{@council[@council.keys.first]["channels"][0]["id"]}"
+  end
+
   def location
     @location = self.reverse_geocode
   end 
