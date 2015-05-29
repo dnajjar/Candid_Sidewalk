@@ -5,7 +5,11 @@
 </div>
 <div>
 
-<p><strong> Your Representative:</strong> <%= @incident.get_name %></p>
+<p><strong> Your Representative: <%= @incident.get_name %></strong></p>
+
+<p><strong> Email: <%= @incident.get_email %></strong></p>
+<img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>'s Face"> 
+
 
 <p><strong>Your Crack:</strong>
 </p>

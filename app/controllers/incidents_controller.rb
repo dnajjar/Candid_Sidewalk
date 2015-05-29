@@ -1,12 +1,13 @@
 class IncidentsController < ApplicationController
-  
+ 
 
 def create
     @incident = Incident.create(incident_params)
     @incident.get_city_data
+    redirect_to @incident
     IncidentMailer.welcome_email(@incident).deliver_now!
     # redirect_to incident_path
-    redirect_to @incident
+    
     # redirect_to action: :show
  end 
   

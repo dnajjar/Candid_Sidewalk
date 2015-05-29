@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   root "incidents#index"
+  
   resources :incidents, only: [:new, :create, :index, :show]
 
   resources :users, only: [:show, :edit, :update]
