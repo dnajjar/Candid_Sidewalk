@@ -2,3 +2,9 @@ input[type="password"]:last-child {
   margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
+  form {
+    width: 100%;
+  }
+}
+
