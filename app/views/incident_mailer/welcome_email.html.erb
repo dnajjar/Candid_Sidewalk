@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
   <body>
-    <p>FIX THIS CRACK!</p>
-    <%= image_tag attachments['image.jpg'].url %>
+    <p>Dear Council Member <%= @rep_name %>,</p>
+    <p>Our district’s streets are in dire need of repair. Potholes and  uneven sidwalks are a hazard to our local population, as well as a major barrier for people with disabilities.</p>
+    <p>The image below was taken at <%= @address %>, in this district. Our community deserves safe, repaired streets. Please fix this road, to prevent injury and increase the wellbeing of us, the constituents.</p><br>
+    <div>
+      <%= image_tag attachments['image.jpg'].url %>
+    </div>
+    <br>
+    <p>Signed,<br>Concerned Citizen</p>
   </body>
-</html>
