@@ -7,8 +7,8 @@ def create
       @incident.user = current_user 
       @incident.user.incidents << @incident
     end
-    @incident.get_city_data 
     redirect_to @incident
+    @incident.get_city_data 
     IncidentMailer.welcome_email(@incident).deliver_now!
  end 
   
