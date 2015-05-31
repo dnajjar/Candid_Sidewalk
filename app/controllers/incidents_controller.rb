@@ -21,6 +21,16 @@ def create
     @incident = Incident.new
   end 
 
+  def marker
+    # marker is an array of lat/long defined in model
+    # make json call  
+    respond_to do |format|
+      format.json {render :markers}
+    end 
+    latitude = @incident.latitude
+    longitude = @incident.longitude
+  end 
+
   private
   def incident_params
     params.require(:incident).permit(:name, :description, :image, :location, :latitude, :longitude)

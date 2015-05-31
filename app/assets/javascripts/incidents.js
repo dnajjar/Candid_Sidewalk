@@ -1,7 +1,8 @@
-$(document).ready(function(){    
+$(document).ready(function(){   
   $('form').submit(function(e){
 
      e.preventDefault();
+     
   function getLocation() {
     if (navigator.geolocation) {
      navigator.geolocation.getCurrentPosition(showPosition);
@@ -9,22 +10,23 @@ $(document).ready(function(){
   }
  
   function showPosition(position) {
-        var longitude = position.coords.longitude;
-        var latitude = position.coords.latitude;
-        var location = [latitude, longitude];
+         var longitude = position.coords.longitude;
+         var latitude = position.coords.latitude;
+         var location = [latitude, longitude];
        
        $('form').children().append('<input type="hidden" name="incident[latitude]" value=' + latitude + ' >');
        $('form').children().append('<input type="hidden" name="incident[longitude]" value=' + longitude + ' >');
        $('form').children().append('<input type="hidden" name="incident[location]" value=' + location + ' >');
-   
+        
 
         $('form').unbind('submit').submit();
+
 
     };
       getLocation();
       $("#spin").show(); 
   });
-var opts = {
+  var opts = {
   lines: 17, // The number of lines to draw
   length: 0, // The length of each line
   width: 10, // The line thickness
@@ -42,8 +44,26 @@ var opts = {
   top: '50%', // Top position relative to parent
   left: '49.5%' // Left position relative to parent
   };
-var target = document.getElementById('spin');
-var spinner = new Spinner(opts).spin(target);
-$('#spin').hide();
+  var target = document.getElementById('spin');
+  var spinner = new Spinner(opts).spin(target);
+  $('#spin').hide();
+  function initialize() {
 
- })
+    var myLatlng = new google.maps.LatLng(40.705329,74.013970);
+    var mapOptions = {
+      center: new google.maps.LatLng(40.7527, -74.0059),
+      zoom: 11,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var mapCanvas = document.getElementById('map-canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map       
+        });  
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+});
+
+

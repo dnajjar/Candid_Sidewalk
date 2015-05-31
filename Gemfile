@@ -9,6 +9,8 @@ gem 'carrierwave'
 gem "mini_magick"
 # Use SCSS for stylesheets
 gem 'civic_aide'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
