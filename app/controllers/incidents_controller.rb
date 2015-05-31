@@ -9,7 +9,7 @@ def create
     end
     @incident.get_city_data 
     redirect_to @incident
-    IncidentMailer.welcome_email(@incident).deliver_now!
+    IncidentMailer.report_email(@incident).deliver_now!
  end 
   
   def show
