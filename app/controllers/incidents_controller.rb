@@ -8,8 +8,12 @@ def create
       @incident.user.incidents << @incident
     end
     redirect_to @incident
+<<<<<<< HEAD
     @incident.get_city_data 
     IncidentMailer.welcome_email(@incident).deliver_now!
+=======
+    IncidentMailer.report_email(@incident).deliver_now!
+>>>>>>> fce37f15d3ae0a89bcc455651da0953d33d89632
  end 
   
   def show
