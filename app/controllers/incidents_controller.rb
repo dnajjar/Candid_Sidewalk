@@ -3,6 +3,7 @@ class IncidentsController < ApplicationController
 
 def create
     @incident = Incident.create(incident_params)
+    
     if logged_in?
       @incident.user = current_user 
       @incident.user.incidents << @incident
