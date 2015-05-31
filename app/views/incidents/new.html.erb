@@ -1,5 +1,6 @@
 
 <div class="col-xs-6 col-sm-offset-3">
+<div id="spin"></div>
 <h2>My Sidewalk Image</h2>
 <%= form_for @incident do |f| %>
  <p>
@@ -12,6 +13,7 @@
    <%= f.submit "Send Report", class: "btn btn-block btn-round btn-d" %>
  </p>
 <% end %>
+
 <button id="preview" >Preview Image</button>
 </div>
 <div class="preview">
