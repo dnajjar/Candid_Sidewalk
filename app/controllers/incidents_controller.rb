@@ -1,5 +1,11 @@
 class IncidentsController < ApplicationController
- 
+def about
+  
+end
+
+def new
+  @incident = Incident.new
+end
 
 def create
     @incident = Incident.create(incident_params)
@@ -12,14 +18,13 @@ def create
     @incident.get_city_data 
     IncidentMailer.report_email(@incident).deliver_now!
  end 
+ 
   
   def show
     @incident = Incident.find(params[:id])
   end
 
-  def new
-    @incident = Incident.new
-  end 
+   
 
   private
   def incident_params

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   resources :incidents, only: [:new, :create, :index, :show]
 
+  get '/about', to: 'incidents#about'
+
   resources :users, only: [:show, :edit, :update]
 
   get '/sign-up', to: 'users#new'
@@ -19,5 +21,6 @@ Rails.application.routes.draw do
   get '/sign-in', to: 'sessions#new'
   post '/sign-in', to: 'sessions#create'
   delete '/sign-out', to: 'sessions#destroy'
+
 
 end
