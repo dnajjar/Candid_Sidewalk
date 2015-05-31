@@ -3,16 +3,16 @@ class IncidentsController < ApplicationController
 
 def create
     @incident = Incident.create(incident_params)
-    @incident.get_city_data
+    if logged_in?
+      @incident.user = current_user 
+      @incident.user.incidents << @incident
+    end
+    @incident.get_city_data 
     redirect_to @incident
     IncidentMailer.welcome_email(@incident).deliver_now!
-    # redirect_to incident_path
-    
-    # redirect_to action: :show
  end 
   
   def show
-    # binding.pry
     @incident = Incident.find(params[:id])
   end
 
