@@ -1,17 +1,18 @@
-<h1>Crack Report</h1>
+<h1>Incident Report</h1>
 <div>
 <p><strong>Your location:</strong> <%= @incident.reverse_geocode %>
 </p>
 </div>
 <div>
 
-<p><strong> Your Representative: <%= @incident.get_name %></strong></p>
+<p><strong> Your Representative: <%= @incident.get_name %> (<%= @incident.get_email %>) 
+</strong></p>
 
-<p><strong> Email: <%= @incident.get_email %></strong></p>
-<img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>'s Face"> 
+<img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>"> 
 
 
-<p><strong>Your Crack:</strong>
+<p><strong>Your Image:</strong>
 </p>
- <%= image_tag(@incident.image.thumb)%>
+ <%= image_tag(@incident.image)%>
 </div>
+

@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <p>FIX THIS CRACK!</p>
-    <%= image_tag attachments['image.jpg'].url %>
-  </body>
-</html>
+<p>Dear Council Member <%= @rep_name %>,<br></p>
+
+<p>Our district’s streets are in dire need of repair. Potholes and  uneven sidwalks are a hazard to our local population, as well as a major barrier for people with disabilities.</p>
+
+<p>The image below was taken at <%= @location %>,in this district. Our community deserves safe, repaired streets. Please fix this road to prevent injury and increase the wellbeing of your constituents.</p><br>
+
+<%= image_tag attachments['image.jpg'].url %><br>
+<p>Signed,<br>
+Concerned Citizen</p>
