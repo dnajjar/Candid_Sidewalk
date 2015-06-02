@@ -1,0 +1,19 @@
+@media only screen and (min-width : 768px) {
+
+  #mobile {
+    display:none;
+  }
+}
+
+.btn.btn-d.btn-circle a {
+  color: #fff;
+
+  &:hover{
+    color: #0f0;
+  }
+}
+
+input[type="file"] {
+  border: 0;
+  margin: 10px 0;
+}
