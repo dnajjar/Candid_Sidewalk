@@ -25,7 +25,8 @@ $(document).ready(function(){
       getLocation(); 
        $("#spin").show(); 
   });
-  var opts = {
+
+var opts = {
   lines: 17, // The number of lines to draw
   length: 0, // The length of each line
   width: 10, // The line thickness
@@ -46,4 +47,5 @@ $(document).ready(function(){
 var target = document.getElementById('spin');
 var spinner = new Spinner(opts).spin(target);
 $('#spin').hide();
+
  })

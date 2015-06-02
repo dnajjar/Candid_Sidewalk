@@ -48,7 +48,13 @@ class Incident < ActiveRecord::Base
   end
 
   def location
-    @location = self.reverse_geocode
+    @adress = self.reverse_geocode
+    if @address = "5 Beaver Street, New York, NY 10004, USA"
+      @location = "11 Broadway, New York, NY, 10004"
+    else 
+      @location = @address
+    end 
+    @location
   end 
 
   def zipcode
