@@ -47,23 +47,7 @@ $(document).ready(function(){
   var target = document.getElementById('spin');
   var spinner = new Spinner(opts).spin(target);
   $('#spin').hide();
-  function initialize() {
-
-    var myLatlng = new google.maps.LatLng(40.705329,74.013970);
-    var mapOptions = {
-      center: new google.maps.LatLng(40.7527, -74.0059),
-      zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var mapCanvas = document.getElementById('map-canvas');
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map       
-        });  
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-
+  
 });
 
 

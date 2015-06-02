@@ -1,5 +1,8 @@
 class IncidentsController < ApplicationController
  
+def index
+  @incidents = Incident.all
+end 
 
 def create
     @incident = Incident.create(incident_params)
@@ -15,6 +18,7 @@ def create
   
   def show
     @incident = Incident.find(params[:id])
+    # show.js.erb
   end
 
   def new
