@@ -1,8 +1,8 @@
-
+<h2>Success! Your report has been sent to your local representative!</h2>
 <%= render 'incident' %>
 
 
-   <div id="map-canvas">  
+   <div id="map">  
   </div>
 
 <script>    
@@ -12,7 +12,7 @@
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    var mapCanvas = document.getElementById('map-canvas');
+    var mapCanvas = document.getElementById('map');
     var myLatlng = new google.maps.LatLng(<%=@incident.latitude%>,<%= @incident.longitude%>);
     var map = new google.maps.Map(mapCanvas, mapOptions);
         var marker = new google.maps.Marker({

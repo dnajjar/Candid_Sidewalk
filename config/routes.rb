@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :incidents, only: [:new, :create, :index, :show]
 
   resources :users, only: [:show, :edit, :update]
-
+  get '/about',   to: 'incidents#about'
   get '/sign-up', to: 'users#new'
   post '/sign-up', to: 'users#create'
   delete '/delete-account', to: 'users#destroy'

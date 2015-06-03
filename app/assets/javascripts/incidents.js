@@ -13,6 +13,7 @@ $(document).ready(function(){
          var longitude = position.coords.longitude;
          var latitude = position.coords.latitude;
          var location = [latitude, longitude];
+
        
        $('form').children().append('<input type="hidden" name="incident[latitude]" value=' + latitude + ' >');
        $('form').children().append('<input type="hidden" name="incident[longitude]" value=' + longitude + ' >');
@@ -47,7 +48,27 @@ $(document).ready(function(){
   var target = document.getElementById('spin');
   var spinner = new Spinner(opts).spin(target);
   $('#spin').hide();
-  
+// function addMap (lng,lat) {
+//    function initialize() {
+//     var mapOptions = {
+//       center: new google.maps.LatLng(40.7527, -74.0059),
+//       zoom: 11,
+//       mapTypeId: google.maps.MapTypeId.ROADMAP
+//     }
+//     var mapCanvas = document.getElementById('map-canvas');
+//     var map = new google.maps.Map(mapCanvas, mapOptions);
+
+//     // (function(){
+//       var myLatlng = new google.maps.LatLng(lat,lng);
+      
+//       var marker = new google.maps.Marker({
+//         position: myLatlng,
+//         map: map       
+//     }); 
+//     // })();
+//   }
+//   google.maps.event.addDomListener(window, 'load', initialize);
+//   }
 });
 
 

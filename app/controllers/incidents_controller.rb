@@ -34,7 +34,9 @@ def create
     latitude = @incident.latitude
     longitude = @incident.longitude
   end 
-
+  def about
+    
+  end
   private
   def incident_params
     params.require(:incident).permit(:name, :description, :image, :location, :latitude, :longitude)

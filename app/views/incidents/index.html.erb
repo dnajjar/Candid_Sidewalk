@@ -5,7 +5,7 @@
 
 </div>
 
-  <% @incidents.each do |incident|%>
+<center>   
 <script>    
   function initialize() {
     var mapOptions = {
@@ -14,16 +14,21 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var mapCanvas = document.getElementById('map-canvas');
-  
-    var myLatlng = new google.maps.LatLng(<%= incident.latitude %>,<%= incident.longitude %>);
     var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({
+  <% @incidents.each do |incident|%>
+    // (function(){
+      var myLatlng = new google.maps.LatLng(<%= incident.latitude %>,<%= incident.longitude %>);
+      
+      var marker = new google.maps.Marker({
         position: myLatlng,
         map: map       
-        }); 
+    }); 
+    // })();
+    <% end %>
       
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
-  <% end %>
+</center> 
+
