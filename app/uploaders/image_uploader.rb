@@ -20,11 +20,11 @@ include CarrierWave::MiniMagick
   process resize_to_fit: [500, 500]
 
   version :thumb do
-    process resize_to_fill: [200,200]
+    process resize_to_fill: [100,100]
   end
 
    version :small_image do
-     process :resize_to_fit => [200, 200]
+     process :resize_to_fit => [50, 50]
   end
 
 

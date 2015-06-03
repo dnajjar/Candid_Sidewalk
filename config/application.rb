@@ -35,5 +35,7 @@ module CandidSidewalk
     
 
     config.active_record.raise_in_transactional_callbacks = true
+    config.assets.enable = true
+    config.assets.paths << Rails.root.join('/app/assets/fonts')
   end
 end

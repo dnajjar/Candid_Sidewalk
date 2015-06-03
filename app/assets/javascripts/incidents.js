@@ -24,10 +24,16 @@ $(document).ready(function(){
 
 
     };
-      getLocation();
-      $("#spin").show(); 
+
+      getLocation(); 
+       $("#spin").show(); 
   });
+<<<<<<< HEAD
   var opts = {
+=======
+
+var opts = {
+>>>>>>> master
   lines: 17, // The number of lines to draw
   length: 0, // The length of each line
   width: 10, // The line thickness

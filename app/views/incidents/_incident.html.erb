@@ -1,13 +1,34 @@
+<<<<<<< HEAD
+=======
+<h1>Incident Report</h1>
+>>>>>>> master
 <div>
 <h5><strong>Your location:</strong> <%= @incident.reverse_geocode %>
 </h5>
 </div>
+<<<<<<< HEAD
 
 <div>
 <h5><strong> Your Representative: </strong>
 <%= @incident.get_name %> (<%= @incident.get_email %>) 
 </h5>
 </div>
+=======
+<div>
+
+<p><strong> Your Representative: <%= @incident.get_name %> (<%= @incident.get_email %>) 
+</strong></p>
+
+<img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>"> 
+>>>>>>> master
 
 <%= image_tag(@incident.image.thumb)%>
 
+<<<<<<< HEAD
+=======
+<p><strong>Your Image:</strong>
+</p>
+ <%= image_tag(@incident.image)%>
+</div>
+
+>>>>>>> master

@@ -10,15 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
+ 
  *= require_self
  *= require_tree .
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "prettify";
 @import "style";
+
 
 /* Some Style from the Bootstrap Default Theme */
 body {
@@ -35,3 +35,13 @@ body {
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+.module-small {
+  padding: 70px 0;
+  margin-top: 40px;
+}
+
+footer.footer {
+  padding-bottom: 30px;
+  margin-bottom: -200px;
+  }

@@ -1,8 +1,17 @@
 class IncidentsController < ApplicationController
+<<<<<<< HEAD
  
 def index
   @incidents = Incident.all
 end 
+=======
+def about
+end   
+
+def new
+  @incident = Incident.new
+end
+>>>>>>> master
 
 def create
     @incident = Incident.create(incident_params)
@@ -15,15 +24,14 @@ def create
     @incident.get_city_data 
     IncidentMailer.report_email(@incident).deliver_now!
  end 
+ 
   
   def show
     @incident = Incident.find(params[:id])
     # show.js.erb
   end
 
-  def new
-    @incident = Incident.new
-  end 
+   
 
   def marker
     # marker is an array of lat/long defined in model
