@@ -5,17 +5,18 @@
  }
 }
 
+.btn.btn-circle {
+   z-index: 200;
+}
 .btn.btn-circle a {
  color: #fff;
+
 
  &:hover{
    color: #0f0;
  }
 }
 
-.index-spacer {
- height: 350px;
-}
 
 input[type="file"] {
  border: 0;
