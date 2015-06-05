@@ -1,15 +1,22 @@
-<h3><%= @user.name %>'s Account</h3>
+<h3><%= @user.name.capitalize %>'s Account</h3>
 
 <h4>Reported Incidents:</h4>
 
+<ul id="works-grid" class="works-grid works-grid-gut works-grid-4 works-hover-w" style="position: relative; height: 633px;">
 <% @user.incidents.each do |incident| %>
-       
-      <div>
-             <%= image_tag(incident.image.thumb)%>
-            
-              <%= incident.name %>
-                 <%= incident.location %>
-       </div>
- <% end %>
- 
-  
+        <!-- Portfolio item start -->
+        <li class="work-item illustration webdesign">
+          <a href="portfolio-single-1.html">
+            <div class="work-image">
+              <%= image_tag(incident.image.thumb)%>
+            </div>
+            <div class="work-caption font-alt">
+              <h3 class="work-title"> <%= incident.name %></h3>
+              <div class="work-descr">
+                  <%= incident.location %>
+              </div>
+            </div>
+          </a>
+        </li>
+    <% end %>
+      </ul>
