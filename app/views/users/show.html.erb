@@ -6,9 +6,8 @@
 <% @user.incidents.each do |incident| %>
         <!-- Portfolio item start -->
         <li class="work-item illustration webdesign">
-          <a href="portfolio-single-1.html">
             <div class="work-image">
-              <%= image_tag(incident.image.thumb)%>
+            <%= image_tag(incident.image.thumb, alt: "Broken Sidewalk") %>
             </div>
             <div class="work-caption font-alt">
               <h3 class="work-title"> <%= incident.name %></h3>
@@ -16,7 +15,6 @@
                   <%= incident.location %>
               </div>
             </div>
-          </a>
         </li>
     <% end %>
       </ul>

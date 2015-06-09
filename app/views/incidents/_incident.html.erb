@@ -10,9 +10,8 @@
 
 <img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>"> 
 
-
 <p><strong>Your Image:</strong>
 </p>
- <%= image_tag(@incident.image)%>
+ <%= image_tag(@incident.image, alt: 'Broken Sidewalk') %>
 </div>
 
