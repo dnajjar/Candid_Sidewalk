@@ -5,14 +5,15 @@
  }
 }
 
-.btn.btn-circle {
-  position: absolute;
-  top: 50px;
-  left: 80px;
-   z-index: 200;
+.btn.btn-default {
+  height:50px;
+  color: #ccc;
+  background-color: #ccc;
+
 }
-.btn.btn-circle a {
- color: #fff;
+
+.btn.btn-default a {
+ color: #000;
 
 
  &:hover{

@@ -1,10 +1,7 @@
 
-<div id="mobile">
-  <button class="btn btn-circle"><%= link_to "Report Broken Sidewalk!", new_incident_path %></button>
-</div>
-
-
-<div id="map-canvas" class="google-maps">
+<%= render "sidebarleft" %>
+<h5 class="widget-title font-alt col-sm-8" style="text-align: center;">  REPORTS TO DATE IN NYC: <%=Incident.all.count%>  </h5>
+<div id="map-canvas" class="col-sm-8">
   </div>
  
 
@@ -33,7 +30,7 @@
       
   }
   google.maps.event.addDomListener(window, 'load', initialize);
-  
+
 
 </script>
 </center> 
