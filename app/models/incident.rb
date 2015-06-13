@@ -1,10 +1,14 @@
 require 'google/api_client'
 class Incident < ActiveRecord::Base
+ validates :longitude, presence: true
+ validates :latitude, presence: true
+ validates :image, presence: true
  
   attr_accessor :address
   belongs_to :user
   mount_uploader :image, ImageUploader
   reverse_geocoded_by :latitude, :longitude
+
 
   def get_city_data
     client = CivicAide::Client.new(ENV['GOOGLE_KEY'])

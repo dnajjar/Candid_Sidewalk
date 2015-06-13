@@ -10,6 +10,7 @@ def new
 end
 
 def create
+  
     @incident = Incident.create(incident_params)
     
     if logged_in?
@@ -32,5 +33,6 @@ def create
   def incident_params
     params.require(:incident).permit(:name, :description, :image, :location, :latitude, :longitude)
   end 
+
 
 end
