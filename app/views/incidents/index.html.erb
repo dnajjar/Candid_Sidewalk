@@ -4,8 +4,10 @@
 </div>
 
 
-<div id="map-canvas">  
+<div id="map-canvas" class="google-maps">
   </div>
+ 
+
 
 <center>   
 <script>    
@@ -19,18 +21,19 @@
     var mapCanvas = document.getElementById('map-canvas');
     var map = new google.maps.Map(mapCanvas, mapOptions);
   <% @incidents.each do |incident|%>
-    // (function(){
+   
       var myLatlng = new google.maps.LatLng(<%= incident.latitude %>,<%= incident.longitude %>);
       
       var marker = new google.maps.Marker({
         position: myLatlng,
         map: map       
     }); 
-    // })();
+
     <% end %>
       
   }
   google.maps.event.addDomListener(window, 'load', initialize);
+  
 
 </script>
 </center> 
