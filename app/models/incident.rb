@@ -1,8 +1,5 @@
 require 'google/api_client'
 class Incident < ActiveRecord::Base
- validates :longitude, presence: true
- validates :latitude, presence: true
- validates :image, presence: true
  
   attr_accessor :address
   belongs_to :user
