@@ -1,7 +1,7 @@
 require 'google/api_client'
 class Incident < ActiveRecord::Base
  
-  attr_accessor :address
+  # attr_accessor :address
   belongs_to :user
   mount_uploader :image, ImageUploader
   reverse_geocoded_by :latitude, :longitude
@@ -49,13 +49,13 @@ class Incident < ActiveRecord::Base
   end
 
   def location
-    @adress = self.reverse_geocode
+    @address = self.reverse_geocode
     # if @address = "5 Beaver Street, New York, NY 10004, USA"
     #   @location = "11 Broadway, New York, NY, 10004"
     # else 
-      @location = @address
+    @location = @address
     # end 
-    # @location
+    @location
   end 
 
   def zipcode
