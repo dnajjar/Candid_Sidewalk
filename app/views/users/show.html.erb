@@ -1,20 +1,53 @@
-<h3><%= @user.name.capitalize %>'s Account</h3>
 
-<h4>Reported Incidents:</h4>
+<h3 style="text-align: center;"><%= @user.name.capitalize %>'s Account</h3>
 
-<ul id="works-grid" class="works-grid works-grid-gut works-grid-4 works-hover-w" style="position: relative; height: 633px;">
+<h4 style="text-align: center;"><%=@user.incidents.count%> Reported Incidents:</h4>
+<div class="col-sm-6" stle="height: 200px;">
+<ul id="works-grid" class="works-grid works-grid-gut works-grid-3 works-hover-w" style="position: relative; height: 300px;">
 <% @user.incidents.each do |incident| %>
         <!-- Portfolio item start -->
         <li class="work-item illustration webdesign">
             <div class="work-image">
-            <%= image_tag(incident.image.thumb, alt: "Broken Sidewalk") %>
+            <%= image_tag(incident.image.thumb, alt: "Report Image") %>
             </div>
             <div class="work-caption font-alt">
               <h3 class="work-title"> <%= incident.name %></h3>
-              <div class="work-descr">
+              
+            </div>
+            <div>
                   <%= incident.location %>
               </div>
-            </div>
         </li>
     <% end %>
       </ul>
+  </div>
+  <div id="map-canvas1" class="col-sm-6">
+  </div>
+  <script>    
+  function initialize() {
+
+    var mapOptions = {
+      center: new google.maps.LatLng(40.7527, -74.0059),
+      zoom: 11,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var mapCanvas = document.getElementById('map-canvas1');
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+  
+  <% @user.incidents.each do |incident|%>
+    <% if incident.latitude && incident.longitude%> 
+      var myLatlng = new google.maps.LatLng(<%= incident.latitude %>,<%= incident.longitude %>);
+      
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map       
+    }); 
+      <% end %>
+    <% end %>
+      
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+
+</script>
+

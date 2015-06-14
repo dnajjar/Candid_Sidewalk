@@ -17,15 +17,16 @@
     }
     var mapCanvas = document.getElementById('map-canvas');
     var map = new google.maps.Map(mapCanvas, mapOptions);
+  
   <% @incidents.each do |incident|%>
-   
+    <% if incident.latitude && incident.longitude%> 
       var myLatlng = new google.maps.LatLng(<%= incident.latitude %>,<%= incident.longitude %>);
       
       var marker = new google.maps.Marker({
         position: myLatlng,
         map: map       
     }); 
-
+      <% end %>
     <% end %>
       
   }
