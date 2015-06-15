@@ -6,6 +6,7 @@ class Incident < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   reverse_geocoded_by :latitude, :longitude
 
+
   def get_city_data
     client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
     @results = client.representatives.at(location)
@@ -48,11 +49,11 @@ class Incident < ActiveRecord::Base
   end
 
   def location
-    @adress = self.reverse_geocode
+    @address = self.reverse_geocode
     # if @address = "5 Beaver Street, New York, NY 10004, USA"
     #   @location = "11 Broadway, New York, NY, 10004"
     # else 
-      @location = @address
+    # @location = @address
     # end 
     # @location
   end 
