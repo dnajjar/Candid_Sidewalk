@@ -17,6 +17,7 @@ def create
       @incident.user = current_user 
       @incident.user.incidents << @incident
     end
+    binding.pry
     @incident.get_city_data 
     IncidentMailer.report_email(@incident).deliver_now!
     redirect_to @incident
