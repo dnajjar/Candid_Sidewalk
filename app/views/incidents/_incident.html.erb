@@ -1,17 +1,22 @@
-<h1>Incident Report</h1>
+<h1>Congratulations! Your Incident Report has been emailed to representative <%= @incident.get_name %></h1>
 <div>
 <p><strong>Your location:</strong> <%= @incident.reverse_geocode %>
 </p>
 </div>
 <div>
+<h4>
+Dear Council Member <%= @incident.get_name %>,<br><br>
 
-<p><strong> Your Representative: <%= @incident.get_name %> (<%= @incident.get_email %>) 
-</strong></p>
+Our district’s streets are in dire need of repair. Potholes and  uneven <br> sidwalks are a hazard to our local population, as well as a major barrier <br> for people with disabilities. <br><br>
 
-<img src="<%= @incident.get_photo %>" title="<%= @incident.get_name %>"> 
+The image below was taken at <%= @incident.reverse_geocode %>,<br> in this district. Our community deserves safe, repaired streets. Please fix <br> this road, to prevent injury and increase the wellbeing of your constituents. <br>
+<br>
+<div><%= image_tag(@incident.image, alt: 'Broken Sidewalk') %>
+</div>
+Signed,<br>
+Concerned Citizen
+</h4>
 
-<p><strong>Your Image:</strong>
-</p>
- <%= image_tag(@incident.image, alt: 'Broken Sidewalk') %>
+ 
 </div>
 
