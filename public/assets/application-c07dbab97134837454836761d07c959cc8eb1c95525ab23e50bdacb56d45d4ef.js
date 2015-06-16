@@ -13716,7 +13716,7 @@
 // 			// Check items number
 // 			if ($(this).data('items') > 0) {
 // 				items = $(this).data('items');
-			} else {
+			// } else {
 // 				items = 4;
 // 			}
 

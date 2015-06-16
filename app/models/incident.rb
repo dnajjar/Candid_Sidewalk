@@ -9,7 +9,6 @@ class Incident < ActiveRecord::Base
 
   def get_city_data
     client = CivicAide::Client.new(ENV['GOOGLE_KEY'])
-    binding.pry
     @results = client.representatives.at(location)
   end
 
