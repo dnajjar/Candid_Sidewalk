@@ -31,7 +31,7 @@ def create
 
   private
   def incident_params
-    params.require(:incident).permit(:name, :description, :image, :location, :latitude, :longitude)
+    params.require(:incident).permit(:name, :description, :image, :latitude, :longitude)
   end 
 
 
