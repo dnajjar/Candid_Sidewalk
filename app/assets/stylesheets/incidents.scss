@@ -6,15 +6,16 @@
 }
 
 .btn.btn-default {
-  height:50px;
+  padding: 20px;
+  border-radius: 5px; 
+  margin: 0 auto 20px;
   color: #ccc;
   background-color: #ccc;
 
 }
 
-.btn.btn-default a {
+a.btn.btn-default {
  color: #000;
-
 
  &:hover{
    color: #0f0;
