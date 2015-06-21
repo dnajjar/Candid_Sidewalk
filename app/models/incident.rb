@@ -53,7 +53,7 @@ class Incident < ActiveRecord::Base
     # if @address = "5 Beaver Street, New York, NY 10004, USA"
     #   @location = "11 Broadway, New York, NY, 10004"
     # else 
-    # @location = @address
+    @location = @address
     # end 
     # @location
   end 
