@@ -10,7 +10,7 @@ class IncidentMailer < ApplicationMailer
     @location = incident.location
     # attachments.inline['image.jpg'] = open(@image).read
     attachments.inline['image.jpg'] = open("#{@image.url}").read
-    mail(to: "najjar.dana@gmail.com" , subject: 'For your consideration')
+    mail(to: "jtaub9503@gmail.com" , subject: 'For your consideration')
     # incident.get_email
   end
 end
